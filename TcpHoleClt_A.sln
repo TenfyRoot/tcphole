@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TcpHoleClt_A", "TcpHoleClt\TcpHoleClt_A.vcproj", "{DFDBC768-5BDA-4512-B427-468BCA9571EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFDBC768-5BDA-4512-B427-468BCA9571EC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DFDBC768-5BDA-4512-B427-468BCA9571EC}.Debug|Win32.Build.0 = Debug|Win32
+		{DFDBC768-5BDA-4512-B427-468BCA9571EC}.Release|Win32.ActiveCfg = Release|Win32
+		{DFDBC768-5BDA-4512-B427-468BCA9571EC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
