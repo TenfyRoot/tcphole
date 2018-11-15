@@ -315,9 +315,10 @@ typedef struct _srv_req_make_hole
 	_srv_req_make_hole ()
 		: ePacketType ( PACKET_TYPE_REQUEST_MAKE_HOLE )
 		, dwInviterID ( 0 )
-		, dwInvitedID ( 0 )
 		, dwInviterHoleID ( 0 )
+		, dwInvitedID ( 0 )
 		, nClientHolePort ( 0 )
+		, nBindPort ( 0 )
 	{
 		memset ( szClientHoleIP, 0, sizeof(szClientHoleIP) );
 	}
@@ -327,6 +328,7 @@ typedef struct _srv_req_make_hole
 	DWORD dwInvitedID;					// 被邀请方（被动方即客户端B）ID号
 	char szClientHoleIP[32];			// 可以向该IP（请求方的外部IP）地址打洞，即发生一次connect尝试
 	UINT nClientHolePort;				// 可以向该端口号（请求方的外部端口号）打洞，即发生一次connect尝试
+	UINT nBindPort;
 } t_SrvReqMakeHolePkt;
 
 //
