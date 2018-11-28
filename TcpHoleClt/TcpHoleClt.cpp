@@ -438,7 +438,7 @@ BOOL Handle_SrvReqMakeHole ( CSocket &MainSock, t_SrvReqMakeHolePkt *pSrvReqMake
 	// 连接服务器协助打洞的端口号 SRV_TCP_HOLE_PORT，发送一个断开连接的请求，然后将连接断开，服务器在收到这个包的时候也会将
 	// 连接断开
 	t_ReqSrvDisconnectPkt ReqSrvDisconnectPkt;
-	ReqSrvDisconnectPkt.dwInviterID = pSrvReqMakeHolePkt->dwInvitedID;
+	ReqSrvDisconnectPkt.dwInviterID = pSrvReqMakeHolePkt->dwInviterID;
 	ReqSrvDisconnectPkt.dwInviterHoleID = pSrvReqMakeHolePkt->dwInviterHoleID;
 	ReqSrvDisconnectPkt.dwInvitedID = pSrvReqMakeHolePkt->dwInvitedID;
 	ASSERT ( ReqSrvDisconnectPkt.dwInvitedID == g_WelcomePkt.dwID );
@@ -465,7 +465,7 @@ BOOL Handle_SrvReqMakeHole ( CSocket &MainSock, t_SrvReqMakeHolePkt *pSrvReqMake
 	if ( ::WaitForMultipleObjects ( LENGTH(hEvtAry), hEvtAry, TRUE, 30*1000 ) == WAIT_TIMEOUT )
 		return FALSE;
 	t_HoleListenReadyPkt HoleListenReadyPkt;
-	HoleListenReadyPkt.dwInvitedID = pSrvReqMakeHolePkt->dwInvitedID;
+	HoleListenReadyPkt.dwInviterID = pSrvReqMakeHolePkt->dwInviterID;
 	HoleListenReadyPkt.dwInviterHoleID = pSrvReqMakeHolePkt->dwInviterHoleID;
 	HoleListenReadyPkt.dwInvitedID = pSrvReqMakeHolePkt->dwInvitedID;
 	if ( MainSock.Send ( &HoleListenReadyPkt, sizeof(t_HoleListenReadyPkt) ) != sizeof(t_HoleListenReadyPkt) )
